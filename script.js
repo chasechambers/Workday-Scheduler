@@ -27,7 +27,7 @@ $(function () {
   //
 
 
-$('#hour-9 .saveBtn').click(function() {
+$('#hour-09 .saveBtn').click(function() {
 
   input9 = $(this).prev().val();
   localStorage.setItem("input9", input9);
@@ -52,33 +52,33 @@ $('#hour-12 .saveBtn').click(function() {
   localStorage.setItem("input12", input12);
 
 });
-$('#hour-1 .saveBtn').click(function() {
+$('#hour-13 .saveBtn').click(function() {
 
   input13 = $(this).prev().val();
   localStorage.setItem("input13", input13);
 
 });
-$('#hour-2 .saveBtn').click(function() {
+$('#hour-14 .saveBtn').click(function() {
 
   input14 = $(this).prev().val();
   localStorage.setItem("input14", input14);
 
 });
-$('#hour-3 .saveBtn').click(function() {
+$('#hour-15 .saveBtn').click(function() {
 
   input15 = $(this).prev().val();
   localStorage.setItem("input15", input15);
 
 });
 
-$('#hour-4 .saveBtn').click(function() {
+$('#hour-16 .saveBtn').click(function() {
 
   input16 = $(this).prev().val();
   localStorage.setItem("input16", input16);
 
 });
 
-$('#hour-5 .saveBtn').click(function() {
+$('#hour-17 .saveBtn').click(function() {
 
   input17 = $(this).prev().val();
   localStorage.setItem("input17", input17);
@@ -96,9 +96,18 @@ $('#hour-5 .saveBtn').click(function() {
 console.log(currentHourTime);
 
 
-$('.time-block').each(function(i, j){
+$('.time-block').each(function(){
 
+  let hour = $(this).attr('id').replace('hour-', '');
+  console.log(hour);
 
+if (currentHourTime > hour) {
+  $(this).removeClass('present').removeClass('future').addClass('past');
+} else if (currentHourTime == hour) {
+  $(this).removeClass('past').removeClass('future').addClass('present');
+} else {
+  $(this).removeClass('past').removeClass('present').addClass('future');
+}
 
 });
 
@@ -110,15 +119,15 @@ $('.time-block').each(function(i, j){
   // attribute of each time-block be used to do this?
   //
 
-  $('#hour-9 .description').text(localStorage.getItem("input9"));
+  $('#hour-09 .description').text(localStorage.getItem("input9"));
   $('#hour-10 .description').text(localStorage.getItem("input10"));
   $('#hour-11 .description').text(localStorage.getItem("input11"));
   $('#hour-12 .description').text(localStorage.getItem("input12"));
-  $('#hour-1 .description').text(localStorage.getItem("input13"));
-  $('#hour-2 .description').text(localStorage.getItem("input14"));
-  $('#hour-3 .description').text(localStorage.getItem("input15"));
-  $('#hour-4 .description').text(localStorage.getItem("input16"));
-  $('#hour-5 .description').text(localStorage.getItem("input17"));
+  $('#hour-13 .description').text(localStorage.getItem("input13"));
+  $('#hour-14 .description').text(localStorage.getItem("input14"));
+  $('#hour-15 .description').text(localStorage.getItem("input15"));
+  $('#hour-16 .description').text(localStorage.getItem("input16"));
+  $('#hour-17 .description').text(localStorage.getItem("input17"));
 
 
 
