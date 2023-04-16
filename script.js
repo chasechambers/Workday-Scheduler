@@ -93,13 +93,10 @@ $('#hour-17 .saveBtn').click(function() {
   // current hour in 24-hour time?
   //
 
-console.log(currentHourTime);
-
 
 $('.time-block').each(function(){
 
   let hour = $(this).attr('id').replace('hour-', '');
-  console.log(hour);
 
 if (currentHourTime > hour) {
   $(this).removeClass('present').removeClass('future').addClass('past');
