@@ -5,7 +5,7 @@
 const saveButton = $('.saveBtn');
 const currentDayText = $('#currentDay');
 const currentHourTime = dayjs().format('H');
-// const hour9 = $('#hour-9');
+const hour9 = $('#9am');
 // const hour10 = $('#hour-10');
 // const hour11 = $('#hour-11');
 // const hour12 = $('#hour-12');
@@ -27,7 +27,7 @@ $(function () {
   //
 
 
-$('#9 .saveBtn').click(function() {
+$('#9am .saveBtn').click(function() {
 
   input9 = $(this).prev().val();
   localStorage.setItem("input9", input9);
@@ -93,6 +93,14 @@ $('#17 .saveBtn').click(function() {
   // current hour in 24-hour time?
   //
 
+console.log(currentHourTime);
+
+
+$('.time-block').each(function(i, j){
+
+
+  
+});
 
 
 
@@ -102,7 +110,7 @@ $('#17 .saveBtn').click(function() {
   // attribute of each time-block be used to do this?
   //
 
-  $('#9 .description').text(localStorage.getItem("input9"));
+  $('#9am .description').text(localStorage.getItem("input9"));
   $('#10 .description').text(localStorage.getItem("input10"));
   $('#11 .description').text(localStorage.getItem("input11"));
   $('#12 .description').text(localStorage.getItem("input12"));
