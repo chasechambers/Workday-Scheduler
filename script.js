@@ -14,44 +14,51 @@ $(function () {
   // useful when saving the description in local storage?
   //
 
+// listen for save button clicks
+$(document).on('click', '.saveBtn', function () {
+  // get nearby values
+  var value = $(this).siblings('.description').val();
+  var time = $(this).parent().attr('id');
+  localStorage.setItem(time, value);
+  console.log(localStorage.getItem('hour-09'));
+});
 
+console.log(localStorage.getItem('hour-9'));
 
-
-$('#hour-09 .saveBtn').click(function() {
-  input9 = $(this).prev().val();
-   localStorage.setItem("input9", input9);
-   console.log(input9)
- });
-$('#hour-10 .saveBtn').click(function() {
-  input10 = $(this).prev().val();
-  localStorage.setItem("input10", input10);
-});
-$('#hour-11 .saveBtn').click(function() {
-  input11 = $(this).prev().val();
-  localStorage.setItem("input11", input11);
-});
-$('#hour-12 .saveBtn').click(function() {
-  input12 = $(this).prev().val();
-  localStorage.setItem("input12", input12);
-});
-$('#hour-13 .saveBtn').click(function() {
-  input13 = $(this).prev().val();
-  localStorage.setItem("input13", input13);
-}); $('#hour-14 .saveBtn').click(function() {
-  input14 = $(this).prev().val();
-  localStorage.setItem("input14", input14);
-}); $('#hour-15 .saveBtn').click(function() {
-  input15 = $(this).prev().val();
-  localStorage.setItem("input15", input15);
-});
-$('#hour-16 .saveBtn').click(function() {
-  input16 = $(this).prev().val();   
-  localStorage.setItem("input16", input16);
-});
-$('#hour-17 .saveBtn').click(function() {
-  input17 = $(this).prev().val();   
-  localStorage.setItem("input17", input17);
-});
+// $('#hour-09 .saveBtn').click(function() {
+//   input9 = $(this).prev().val();
+//    localStorage.setItem("input9", input9);
+//  });
+// $('#hour-10 .saveBtn').click(function() {
+//   input10 = $(this).prev().val();
+//   localStorage.setItem("input10", input10);
+// });
+// $('#hour-11 .saveBtn').click(function() {
+//   input11 = $(this).prev().val();
+//   localStorage.setItem("input11", input11);
+// });
+// $('#hour-12 .saveBtn').click(function() {
+//   input12 = $(this).prev().val();
+//   localStorage.setItem("input12", input12);
+// });
+// $('#hour-13 .saveBtn').click(function() {
+//   input13 = $(this).prev().val();
+//   localStorage.setItem("input13", input13);
+// }); $('#hour-14 .saveBtn').click(function() {
+//   input14 = $(this).prev().val();
+//   localStorage.setItem("input14", input14);
+// }); $('#hour-15 .saveBtn').click(function() {
+//   input15 = $(this).prev().val();
+//   localStorage.setItem("input15", input15);
+// });
+// $('#hour-16 .saveBtn').click(function() {
+//   input16 = $(this).prev().val();   
+//   localStorage.setItem("input16", input16);
+// });
+// $('#hour-17 .saveBtn').click(function() {
+//   input17 = $(this).prev().val();   
+//   localStorage.setItem("input17", input17);
+// });
 
 
 
@@ -65,7 +72,7 @@ $('#hour-17 .saveBtn').click(function() {
 
 $('.time-block').each(function(){
 
-  let hour = $(this).attr('id').replace('hour-', '');
+  let hour = $(this).attr('id').replace('hour-', ' ');
 
   if (currentHourTime > hour) {
     $(this).removeClass('present').removeClass('future').addClass('past');
@@ -82,16 +89,22 @@ $('.time-block').each(function(){
   //
 
 
+  for(var i=0; i<=17; i++)
+    {
+      $('#hour-' + i +' .description').text(localStorage.getItem('hour-'+ i))
+    }
+  
 
-  $('#hour-09 .description').text(localStorage.getItem("input9"));
-  $('#hour-10 .description').text(localStorage.getItem("input10"));
-  $('#hour-11 .description').text(localStorage.getItem("input11"));
-  $('#hour-12 .description').text(localStorage.getItem("input12"));
-  $('#hour-13 .description').text(localStorage.getItem("input13"));
-  $('#hour-14 .description').text(localStorage.getItem("input14"));
-  $('#hour-15 .description').text(localStorage.getItem("input15"));
-  $('#hour-16 .description').text(localStorage.getItem("input16"));
-  $('#hour-17 .description').text(localStorage.getItem("input17"));
+
+  // $('#hour-09 .description').text(localStorage.getItem("input9"));
+  // $('#hour-10 .description').text(localStorage.getItem("input10"));
+  // $('#hour-11 .description').text(localStorage.getItem("input11"));
+  // $('#hour-12 .description').text(localStorage.getItem("input12"));
+  // $('#hour-13 .description').text(localStorage.getItem("input13"));
+  // $('#hour-14 .description').text(localStorage.getItem("input14"));
+  // $('#hour-15 .description').text(localStorage.getItem("input15"));
+  // $('#hour-16 .description').text(localStorage.getItem("input16"));
+  // $('#hour-17 .description').text(localStorage.getItem("input17"));
 
 
 
