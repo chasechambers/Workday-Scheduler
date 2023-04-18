@@ -15,12 +15,9 @@ The scheduler can be accessed at: https://chasechambers.github.io/Workday-Schedu
 
 ## Usage
 
-A user can key in their tasks in each hour block and then click save. When they refresh the page, the tasks will still be there. When they are done, they can just delete the task and click save again.
+A user can key in their tasks in each hour block and then click save. When they refresh the page, the tasks will still be there. When they are done, they can just delete the task and click save again. The day at the top will change automatically, adjusting what is past present and future by the hour.
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
+![Screenshot](./Assets/images/scheduler%20screenshot.png)
 ## Credits
 
 I worked on this while looking up basic commands through day.js, W3Schools, and MDN.
