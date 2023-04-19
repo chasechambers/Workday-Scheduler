@@ -4,7 +4,6 @@
 
 const currentDayText = $('#currentDay');
 const currentHourTime = dayjs().format('H');
-console.log(currentHourTime);
 
 $(function () {
   
@@ -34,8 +33,10 @@ $(document).on('click', '.saveBtn', function () {
 $('.time-block').each(function(){
 
   let hour = $(this).attr('id').replace('hour-', '');
-console.log(hour);
-  if (currentHourTime < hour) {
+
+  console.log(hour);
+
+  if (currentHourTime > hour) {
     $(this).removeClass('present').removeClass('future').addClass('past');
   } else if (currentHourTime == hour) {
     $(this).removeClass('past').removeClass('future').addClass('present');
