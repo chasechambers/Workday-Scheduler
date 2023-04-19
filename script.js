@@ -3,7 +3,7 @@
 // in the html.
 
 const currentDayText = $('#currentDay');
-const currentHourTime = dayjs().format('H');
+const currentHourTime = dayjs().hour();
 
 $(function () {
   
